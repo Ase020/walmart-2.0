@@ -20,7 +20,6 @@ const AddToCart = ({ product }: { product: Product }) => {
   console.log("How many in cart: ", howManyInCart);
 
   const handleAdd = () => {
-    console.log("Adding to cart", product);
     addToCart(product);
   };
 
@@ -36,7 +35,11 @@ const AddToCart = ({ product }: { product: Product }) => {
       </div>
     );
   }
-  return <Button onClick={handleAdd}>AddToCart</Button>;
+  return (
+    <Button onClick={handleAdd} className="bg-walmart hover:bg-walmart/50">
+      AddToCart
+    </Button>
+  );
 };
 
 export default AddToCart;

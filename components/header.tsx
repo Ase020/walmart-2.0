@@ -13,8 +13,14 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 
+import { getCartTotal } from "@/lib/getCartTotal";
+import { useCartStore } from "@/store";
+
 function Header() {
   const router = useRouter();
+  const cart = useCartStore((state) => state.cart);
+  const total = getCartTotal(cart);
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -94,9 +100,13 @@ function Header() {
           className="flex items-center space-x-2 text-sm text-white font-bold "
         >
           <ShoppingCart size={20} />
-          <div className="">
-            <p className="capitalize text-xs font-extralight">no items</p>
-            <p className="capitalize">$ 0.00</p>
+          <div className="flex flex-col items-center">
+            <p className="capitalize text-xs font-extralight">
+              {cart.length > 0 ? `${cart.length}` : "no items"}
+            </p>
+            <p className="capitalize">
+              {cart.length > 0 ? `${total}` : "Basket"}
+            </p>
           </div>
         </Link>
       </div>
