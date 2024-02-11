@@ -14,7 +14,6 @@ const Basket = () => {
   const basketTotal = getCartTotal(cart);
   const grouped = groupBySKU(cart);
 
-  console.log("Grouped: ", grouped);
   return (
     <div className="max-w-7xl mx-auto">
       <ul className="space-y-2 divide-y-2">

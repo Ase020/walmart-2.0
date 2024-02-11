@@ -11,13 +11,9 @@ const AddToCart = ({ product }: { product: Product }) => {
     state.addToCart,
   ]);
 
-  console.log("Cart: ", cart);
-
   const howManyInCart = cart.filter(
     (item: Product) => item.meta.sku === product.meta.sku
   ).length;
-
-  console.log("How many in cart: ", howManyInCart);
 
   const handleAdd = () => {
     addToCart(product);
