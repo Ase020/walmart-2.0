@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { fetchProduct } from "@/lib/fetchProduct";
+import AddToCart from "@/components/add-to-cart";
 import { Badge } from "@/components/ui/badge";
 import {
   Carousel,
@@ -19,6 +19,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { fetchProduct } from "@/lib/fetchProduct";
 
 type Props = {
   searchParams: {
@@ -119,6 +120,7 @@ const Product = async ({ searchParams: { url } }: Props) => {
         </p>
 
         {/* add to cart */}
+        <AddToCart product={product} />
 
         <hr />
 
