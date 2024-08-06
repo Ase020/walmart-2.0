@@ -26,7 +26,7 @@ const BasketInterception = () => {
         }
       }}
     >
-      <DialogContent className="h-4/5 w-full overflow-scroll max-w-3xl">
+      <DialogContent className="h-4/5 w-full overflow-auto max-w-3xl">
         <DialogHeader>
           <DialogTitle>Basket</DialogTitle>
           <DialogDescription>
